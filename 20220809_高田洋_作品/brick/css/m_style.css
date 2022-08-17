@@ -1,0 +1,337 @@
+@charset "UTF-8";
+
+body {
+	width: 100vw;
+	color: rgb(30, 30, 30);
+	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+	margin: 0 auto;
+	background-color: rgb(250, 237, 228);
+	background-image: linear-gradient(45deg, transparent 20%, rgb(218, 207, 203) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 20%, rgb(218, 207, 203) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 75%, rgb(218, 207, 203) 80%, transparent 75%);
+	background-size: 30px 30px, 30px 30px;	
+}
+
+*,
+*::before,
+::after {
+	box-sizing: border-box;
+}
+
+/* モバイルファースト・576px以下 */
+#container,
+#article {
+	max-width: 576px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #fff;
+	z-index: 100;
+}
+
+/* メニューバー固定 */
+#container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: repeat(2, auto);
+	padding: 0;
+}
+
+/* ロゴ上部配置 */
+header {
+	grid-column: 1;
+	grid-row: 1;
+	border-bottom: .5px solid #ccc;
+}
+
+/* ロゴ背景模様設定 */
+.logo {
+	text-align: center;
+	height: 50px;
+	background-color: rgb(41, 37, 33);
+	background-image: linear-gradient(45deg, transparent 20%, rgb(17, 16, 15) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 20%, rgb(17, 16, 15) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 75%, rgb(17, 16, 15) 80%, transparent 75%);
+	background-size: 30px 30px, 30px 30px;
+	display: grid;
+	/* .logo imgの位置調整の為 */
+}
+
+.logo img {
+	align-self: center;
+	justify-self: center;
+}
+
+/* メニューバー配置 */
+nav {
+	grid-column: 1;
+	grid-row: 2;
+	background-color: rgb(30, 30, 30);
+	height: 100px;
+}
+
+/* メニューバー4行 */
+nav ul {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	padding: 0;
+	margin-top: 0;
+}
+
+nav ul li {
+	text-align: center;
+	list-style-type: none;
+	line-height: 24px;
+	border: none;
+}
+
+nav ul li a {
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	display: block;
+}
+
+nav ul li:nth-child(1) {
+	border-bottom: .5px solid #ccc;
+	grid-column: 1;
+	grid-row: 1;
+}
+
+nav ul li:nth-child(2) {
+	border-bottom: .5px solid #ccc;
+	grid-column: 1;
+	grid-row: 2;
+}
+
+nav ul li:nth-child(3) {
+	border-bottom: .5px solid #ccc;
+	grid-column: 1;
+	grid-row: 3;
+}
+
+nav ul li:nth-child(4) {
+	border-bottom: .5px solid #ccc;
+	grid-column: 1;
+	grid-row: 4;
+}
+
+/* コーヒーアイコン */
+.fa-mug-saucer {
+	vertical-align: middle;
+	padding-right: 10px;
+	font-size: 1.5em;
+}
+
+.fa-mug-hot {
+	vertical-align: middle;
+	padding-right: 10px;
+	font-size: 1.65em;
+}
+
+/* 通常時は英語非表示 */
+.english {
+	display: none;
+}
+
+/* ロールオーバー時は日本語非表示 */
+a:hover .japanese {
+	display: none;
+}
+
+/* ロールオーバー時は英語表示 */
+a:hover .english {
+	display: inline;
+}
+
+/* footer */
+footer {
+	background-color: rgb(30, 30, 30);
+	text-align: center;
+}
+
+small {
+	color: #fff;
+	margin-bottom: 0;
+	line-height: 30px;
+}
+
+/* 576px以上 */
+@media (min-width: 576px) {
+
+	#container,
+	#article {
+		max-width: 768px;
+	}
+
+	/* ロゴ+メニューバーグリッド大枠 */
+	#container {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(2, auto);
+	}
+
+	header {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	nav {
+		grid-column: 1;
+		grid-row: 2;
+		height: 50px;
+	}
+
+	/* メニューバー2行 */
+	nav ul {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	nav ul li {
+		line-height: 24px;
+		border: none;
+	}
+
+	nav ul li:nth-child(1) {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	nav ul li:nth-child(2) {
+		border-left: .5px solid #ccc;
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	nav ul li:nth-child(3) {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	nav ul li:nth-child(4) {
+		border-left: .5px solid #ccc;
+		grid-column: 2;
+		grid-row: 2;
+	}
+}
+
+/* 縦長ページ共通・トップへ戻るボタン */
+/* index.htmlではdisplay: none;に */
+.gotop {
+	display: block;
+	position: fixed;
+	border: none;
+	background-color: transparent;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10000;
+}
+
+
+/* 768ピクセル以上 */
+@media (min-width: 768px) {
+
+	#container,
+	#article {
+		max-width: 960px;
+	}
+
+	/* メニューバー固定 */
+	#container {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		display: grid;
+		grid-template-columns: 320px auto;
+		grid-template-rows: auto;
+		padding: 0;
+	}
+
+	header {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.logo {
+		text-align: center;
+		display: block;
+		width: 320px;
+		height: 90px;
+		background-color: rgb(41, 37, 33);
+		background-image: linear-gradient(45deg, transparent 20%, rgb(17, 16, 15) 25%, transparent 25%),
+			linear-gradient(-45deg, transparent 20%, rgb(17, 16, 15) 25%, transparent 25%),
+			linear-gradient(-45deg, transparent 75%, rgb(17, 16, 15) 80%, transparent 75%);
+		background-size: 30px 30px, 30px 30px;
+		display: grid;
+	}
+
+	.logo img {
+		width: 80%;
+		height: 80%;
+		align-self: center;
+		justify-self: center;
+	}
+
+	nav {
+		grid-column: 2;
+		grid-row: 1;
+		height: 90px;
+	}
+
+	nav ul {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		margin-top: 0;
+	}
+
+	nav ul li {
+		text-align: center;
+		list-style-type: none;
+		line-height: 90px;
+	}
+
+	nav ul li a {
+		color: #fff;
+		font-size: 14px;
+		text-decoration: none;
+		display: block;
+	}
+
+	nav ul li:nth-child(1) {
+		border-left: .5px solid #ccc;
+		border-bottom: none;
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	nav ul li:nth-child(2) {
+		border-bottom: none;
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	nav ul li:nth-child(3) {
+		border-left: .5px solid #ccc;
+		border-bottom: none;
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	nav ul li:nth-child(4) {
+		border-bottom: none;
+		grid-column: 4;
+		grid-row: 1;
+	}
+
+	.gotop {
+		display: none;
+	}
+
+	footer{
+		max-width:960px;
+		margin:0 auto;
+	}
+}

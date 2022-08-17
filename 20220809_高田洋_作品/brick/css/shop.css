@@ -1,0 +1,388 @@
+@charset "UTF-8";
+:root{
+    --wid:250px;
+    --hei:167px;
+}
+body{
+    margin:0 auto;
+    width:auto;
+}
+nav ul li:nth-child(3) {
+	background-color: rgb(71, 61, 53);
+	background-image: linear-gradient(45deg, transparent 20%, rgb(32, 29, 28) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 20%, rgb(32, 29, 28) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 75%, rgb(32, 29, 28) 80%, transparent 75%);
+	background-size: 30px 30px, 30px 30px;
+	text-shadow: 2px 2px 2px #ccc;
+}
+.banner1{
+    display: none;
+}
+.table{
+    width: 100%;
+}
+body{
+    width:100vw;
+}
+figure{
+    margin:0;
+}
+.syohin1,
+.syohin2,
+.syohin3,
+.syohin4{
+    display: grid;
+    grid-template-columns: auto 250px 200px auto;
+    grid-template-rows: 200px auto auto;
+}
+.imghover{
+    grid-column: 2/3;
+    grid-row: 1;
+}
+figure{
+    grid-column: 3/4;
+    grid-row: 1;
+}
+.jika{
+    grid-column: 1/5;
+    grid-row: 2;
+}
+.table{
+    grid-column: 1/5;
+    grid-row: 3;
+    justify-self: center;
+}
+#contain{
+    padding:0 20px 0 20px;
+}
+.coffeemame{
+    width: calc(100vw - 40px);
+    margin:0 auto;
+}
+/* バナー画像 */
+.banner1{
+    width: 100%;
+    background-color: white;
+}
+.banner2{
+    max-width:100%; 
+}
+.shoptitle,
+.mamenamae,
+.a td:nth-child(1),
+.c td:nth-child(1),
+.f td:nth-child(1){
+    font-family: 'Noto Serif JP', serif;
+}
+.tyuui{
+    margin:0 auto;
+    width: 500px;
+    background-color: rgb(210,210,210);
+}
+.tax{
+    text-align: right;
+}
+.shoptitle{
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom:5px;
+    position: relative;
+    border-bottom: solid rgb(135,93,82) 3px;
+    width:calc(100% - 30px);
+    margin-left:15px;
+    font-size: x-large;
+    font-weight: 700;
+}
+.shoptitle::after{
+    content:"";
+   display:block;
+   width:100%;
+   height:1px;
+   background-color:rgb(135,93,82);
+   position:absolute;
+}
+.tu_img{
+    width:var(--wid);
+    height: var(--hei);
+}
+.jika{    
+    margin:0;
+    font-size: 15px;
+}
+.jika{
+    font-weight: 300;
+}
+.mamenamae{
+    font-size: 20px;
+    font-size: large;
+    font-weight: 700;
+}
+/* 値段とグラムの表 */
+.table td{
+    text-align: center;
+}
+.twohun{
+    background-color: rgb(96,65,59);
+    color: white;
+}
+.fivehun{
+    background-color: rgb(221,149,135);
+    color: black;
+}
+/* ロールオーバーで拡大 */
+.imghover{
+    width:var(--wid);
+    height: var(--hei);
+    overflow: hidden;/*拡大時にはみ出た部分を隠す*/
+}
+.tu_img{    	
+    transition-duration: 0.7s;
+    display: block;
+}
+.tu_img:hover{
+    transform: scale(1.1);	/*画像の拡大率*/
+}
+input{
+    width:45px;}
+/* 豆の味 */
+.jika{
+    width:auto;
+}
+.syohin1,.syohin2,.syohin3,.syohin4{
+    box-sizing: border-box;
+}
+#contain{
+    background-color: white;
+}
+/* 豆の表 */
+.coffeemame{    
+    border-collapse: collapse;
+}
+.coffeemame tbody tr{
+    text-align: center;
+}
+.coffeemame tbody tr td{
+    text-align: left;
+}
+.coffeemame tbody tr td:last-child{
+    border-left: solid white 2px;
+    padding-left: 3px;
+}
+.a td:nth-child(1){
+    background-color: rgb(80,104,108);
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+.c td:nth-child(1){
+    background-color: rgb(135,93,82);
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+.f td:nth-child(1){
+    background-color: rgb(206,37,40);
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+.a td:nth-child(2),
+.a td:nth-child(3){
+    background-color: rgb(115,134,137);
+    font-weight: 300;
+}
+.b td{
+    background-color: rgb(202,210,211);
+    font-weight: 300;
+}
+.c td:nth-child(2),
+.c td:nth-child(3){
+    background-color: rgb(159,127,117);
+    font-weight: 300;
+}
+.d td{
+    background-color: rgb(195,174,168);
+    font-weight: 300;
+}
+.e td{
+    background-color: rgb(231,223,220);
+    font-weight: 300;
+}
+.f td:nth-child(2),
+.f td:nth-child(3){
+    background-color: rgb(212,61,64);
+    font-weight: 300;
+}
+.g td{
+    background-color: rgb(228,134,135);
+    font-weight: 300;
+}
+.i td{
+    background-color: rgb(244,207,207);
+    font-weight: 300;
+}
+.space{
+    height: 20px;
+}
+.gotop {
+    display: block;
+    position: fixed;
+    border: none;
+    background-color: transparent;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+@media(min-width:769px){
+    .banner1{
+        display: block;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    .banner2{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .banner3{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .banner3{
+        grid-column: 1;
+        grid-row: 1;
+        color: white;
+        font-family: 'Noto Serif JP', serif;
+        font-size: 1.5em;
+        font-weight: 500;
+        justify-self: center;
+        align-self: center;
+        margin: 0 50px 0 50px;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+    .shoptitle{
+        width:calc(100% - 30px);
+        margin: 0 15px 0 15px;
+    }
+    body{
+        width:auto;
+    }
+    .gotop{
+        display: none;
+    }    
+}
+@media(min-width:961px){
+    body{
+        width:960px;
+        margin:0 auto;
+    }
+    #contain{
+        padding:0;
+    }
+    /* コンテンツのグリッド */
+    .contents{
+        display: grid;
+        grid-template-columns: 480px 480px;
+        grid-template-rows: auto auto;
+    }
+    .syohin1{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .syohin2{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .syohin3{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .syohin4{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .syohin1,.syohin2,.syohin3,.syohin4{
+        display: grid;
+        grid-template-columns: 20px 430px 20px;
+        grid-column-gap: 0;    
+        grid-template-rows:200px auto 58px;
+    }
+    .imghover{
+        grid-column: 1/2;
+        grid-row: 1;
+        justify-self: start;
+    }    
+    figure{
+        grid-column: 3/4;
+        grid-row: 1;
+        justify-self: end;
+        margin:0;
+    }
+    .table2 .taste td:nth-child(2){
+        text-align: left;
+        color: rgb(135,92,82);
+    }
+    .jika{
+        grid-column: 2/3;
+        grid-row:2;
+        margin:0;
+    }
+    .mamenamae{
+        font-weight: bold;
+    }
+    .table{
+        grid-column: 2/3;
+        grid-row: 3;
+    }    
+    .table{
+        width: 100%;
+    }
+    .syohin1,
+    .syohin2{
+        border-bottom: dotted 1px rgb(135,93,82);
+    }
+    .syohin1{
+        border-right: dotted 1px rgb(135,93,82);
+    }
+    .syohin3{
+        border-right:  dotted 1px rgb(135,93,82);
+    }
+    .coffeemame{
+        width: 900px;
+        margin:0 auto;
+    }
+    .tax{
+        padding-right: 20px;
+    }
+    /* コーヒーの味登場 */
+    .hyou1,
+    .hyou2,
+    .hyou3,
+    .hyou4{
+        overflow: hidden;
+        position: relative;
+    }
+    .hyou1:before,
+    .hyou2:before,
+    .hyou3:before,
+    .hyou4:before{
+        animation-duration: 1s;
+        animation-name: zyozyoni2;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        background: #fff;    
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+    @keyframes zyozyoni2{
+    100% {
+        transform: translateX(100%);
+    }
+    } 
+}

@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+nav ul li:nth-child(2) {
+	background-color: rgb(71, 61, 53);
+	background-image: linear-gradient(45deg, transparent 20%, rgb(32, 29, 28) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 20%, rgb(32, 29, 28) 25%, transparent 25%),
+		linear-gradient(-45deg, transparent 75%, rgb(32, 29, 28) 80%, transparent 75%);
+	background-size: 30px 30px, 30px 30px;
+	text-shadow: 2px 2px 2px #ccc;
+}
+
+main {
+	max-width: 576px;
+	margin: 0px auto;
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.tab_class {
+	width: calc(100%/3);
+	height: 30px;
+	background-color: darkgrey;
+	line-height: 30px;
+	font-size: 15px;
+	text-align: center;
+	display: block;
+	order: -1;
+}
+
+/* ラジオボタン非表示 */
+input[name="tab_name"] {
+	display: none;
+}
+
+/* 選択されているラジオメニューのボックス色指定 */
+input:checked+.tab_class {
+	background-color: rgb(88, 87, 86);
+	color: rgb(226, 223, 198);
+	font-weight: 700;
+}
+
+/* ラジオボタンにチェック有のラベルの下にあるcontent_classを表示 */
+input:checked+.tab_class+.content_class {
+	display: block;
+}
+
+/* タブ部分で横幅を使い切る */
+.content_class {
+	display: none;
+	width: 100%;
+}
+
+/* 商品紹介文 */
+figcaption {
+	max-width: 255px;
+	font-size: 0.75em;
+	margin-bottom: 10px;
+}
+
+.minc {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-family: 'Noto Serif JP', serif;
+	font-weight: 700;
+	font-size: 1.2em;
+}
+
+/* 税込み注意書き */
+#kakaku {
+	text-align: right;
+	font-size: 0.75em;
+	color: rgb(30, 30, 30);
+}
+
+/* ↑ここまで共通↑ */
+/* ↓ここからモバイル・タブレット共通↓ */
+
+.menu_image {
+	display: none;
+}
+
+/* 縦長ページ共通・トップへ戻るボタン */
+.gotop {
+	display: block;
+	position: fixed;
+	border: none;
+	background-color: transparent;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10000;
+}
+
+/* グリッド配置 */
+.menu {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, auto);
+	margin: 10px auto;
+	padding: 0;
+	justify-items: center;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+.menu>.aa {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.menu>.bb {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.menu>.cc {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.menu>.dd {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.menu>.ee {
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.menu>.ff {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+/* ↑ここまでモバイル・タブレット共通↑ */
+/* ↓ここからモバイルのみ↓ */
+
+sub {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	margin: 30px auto 10px;
+	padding: 10px 0;
+	justify-items: center;
+	border-top: 3px solid rgb(135, 93, 82);
+	border-bottom: 3px solid rgb(135, 93, 82);
+}
+
+sub .o_box {
+	grid-column: 1;
+	grid-row: 1;
+	top: 0;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 5px;
+	color: #fff;
+	background-color: rgb(201, 13, 16);
+	font-size: 1.5em;
+	text-align: center;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-family: 'Noto Serif JP', serif;
+	font-weight: 700;
+}
+
+.mbr {
+	display: none;
+}
+
+sub .o_image {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+sub .o_text {
+	grid-column: 1;
+	grid-row: 3;
+	justify-self: center;
+}
+
+/* 768px以上 */
+@media (min-width: 768px) {
+	.menu_image {
+		display: block;
+		height: 300px;
+	}
+
+	.menu_image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	main {
+		max-width: 960px;
+	}
+
+	.menu {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		margin: 10px auto;
+		padding: 0;
+		justify-items: center;
+	}
+
+	figure {
+		margin: 0;
+		padding: 0;
+	}
+
+	.menu>.aa {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.menu>.bb {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.menu>.cc {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.menu>.dd {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.menu>.ee {
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	.menu>.ff {
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+	sub {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		padding: 10px 0;
+		justify-items: center;
+	}
+
+	sub .o_box {
+		position: relative;
+		justify-self: center;
+		top: -35px;
+		width: 150px;
+		height: 100px;
+		padding-top: 5px;
+	}
+
+	sub .o_image {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	sub .o_text {
+		grid-column: 3;
+		grid-row: 1;
+		padding: 5px;
+		justify-self: start;
+	}
+
+	/* 縦長ページ共通・トップへ戻るボタン削除 */
+	.gotop {
+		display: none;
+	}
+}
